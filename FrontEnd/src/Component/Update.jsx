@@ -26,13 +26,13 @@ const Update = () => {
         e.preventDefault();
         setError(ValidateSignup(formData));
         try {
-          await axios.put(`http://localhost:8081/update/${data.id}`,{
+          await axios.put(`http://localhost:8081/editUserDetails/${data.id}`,{
                 username: formData.username,
                 age: formData.age,
                 contact: formData.phone,
                 dob: formData.dob,
           });
-          navigate(`/home/${data.id}`);
+          navigate(`/getUserDetails/${data.id}`);
         } catch (err) {
           console.log(err);
           setError(true);

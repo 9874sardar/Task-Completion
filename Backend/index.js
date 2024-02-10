@@ -35,7 +35,7 @@ app.post('/signup',(req,res) =>{
     })
 })
 
-app.put('/update/:id',(req,res)=>{
+app.put('/editUserDetails/:id',(req,res)=>{
     const id = req.params.id;
     const sql = "UPDATE signup SET `username`= ?,`contact`= ?,`dob`= ?,`age`= ? WHERE id= ?";
 
@@ -71,7 +71,7 @@ app.post('/login',(req,res) =>{
     })
 })
 
-app.get('/home/:id',(req,res) =>{
+app.get('/getUserDetails/:id',(req,res) =>{
     const user = req.params.id;
     const sql = "SELECT * FROM signup WHERE `id` = ?";
     db.query(sql,[user], (err,data)=>{

@@ -31,7 +31,7 @@ const Login = () => {
           if(res.data === "Failure") {
             alert("No record existed")
           } else {
-            navigate(`/home/${res.data[0].id}`);
+            navigate(`/getUserDetails/${res.data[0].id}`);
           }
         })
         .catch((err) => console.log(err));

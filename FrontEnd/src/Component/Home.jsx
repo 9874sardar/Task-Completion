@@ -17,7 +17,7 @@ const Home = () => {
   useEffect(() => {
     const callDetails = async () => {
       try {
-        const res = await axios.get(`http://localhost:8081/home/${data.id}/`);
+        const res = await axios.get(`http://localhost:8081/getUserDetails/${data.id}/`);
         setUser(res.data[0]);
       } catch (err) {
         console.log(err);
@@ -37,7 +37,7 @@ const Home = () => {
       <p>Age : {user.age}</p>
       </div>
       </div>
-      <Link to={`/update/${user.id}`}>Update Details</Link>{"   |   "}
+      <Link to={`/editUserDetails/${user.id}`}>Update Details</Link>{"   |   "}
       <Link to={`/`}>Logout</Link>
     </div>
   )
